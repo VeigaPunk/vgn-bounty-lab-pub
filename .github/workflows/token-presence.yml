@@ -1,0 +1,14 @@
+name: token-presence
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: token presence facts
+        run: |
+          echo "len=${#GITHUB_TOKEN}"
+          echo "set=$(env | grep -c '^GITHUB_TOKEN=')"
+          env | sed -n 's/^\(GITHUB_[A-Z_]*\|ACTIONS_[A-Z_]*\|RUNNER_[A-Z_]*\)=.*/\1=[set]/p' | sort
+          echo "actor=$GITHUB_ACTOR trigger=$GITHUB_EVENT_NAME ref=$GITHUB_REF"
