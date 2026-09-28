@@ -1,5 +1,11 @@
 name: bend-verdict-probe
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bend-verdict-probe.yml'
+      - 'attacks/**'
 permissions:
   contents: read
 
