@@ -31,7 +31,7 @@ jobs:
           BENDBIN=$(find "$HOME/.bend" -type f -name bend -size +10M | head -1)
           test -n "$BENDBIN"
           echo "bin=$BENDBIN" >> "$GITHUB_OUTPUT"
-          "$BENDBIN" --version
+          ("$BENDBIN" --version || true) | head -3
 
       - name: toolchain diagnostics (evidence)
         run: |
