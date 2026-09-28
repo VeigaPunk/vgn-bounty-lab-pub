@@ -21,7 +21,9 @@ jobs:
           echo "5c365ddb12954d0933cef751802e0f7d9875f842edcb80f9661f89cd1a9ff7b6  bend.tar.gz" | sha256sum -c -
           mkdir -p "$HOME/.bend"
           tar -xzf bend.tar.gz -C "$HOME/.bend"
-          find "$HOME/.bend" -maxdepth 3 -exec ls -la {} \; > extraction-tree.txt
+          echo "=== all bend-named files (binary = the >10MB one):"
+          find "$HOME/.bend" -type f -name 'bend*' -exec ls -la {} \; > extraction-tree.txt
+          find "$HOME/.bend" -type f -name 'bend*' ! -size +10M -exec sh -c 'echo "--- $1 (head)"; head -c 2000 "$1"' _ {} \; > text-bend-files.txt || true
 
       - name: toolchain diagnostics (non-fatal, evidence first)
         run: |
@@ -38,10 +40,12 @@ jobs:
             "$BENDBIN" -V 2>&1 | head -5 || true
             "$BENDBIN" version 2>&1 | head -5 || true
             echo "=== help head:"
-            "$BENDBIN" --help 2>&1 | head -30 || true
+            "$BENDBIN" --help 2>&1 | head -40 || true
+            echo "=== text bend* files bundled in tarball (leads):"
+            cat text-bend-files.txt 2>/dev/null || true
           } > toolchain.log 2>&1 || true
           cat toolchain.log
-          BIN_DIR=$(dirname "$(find "$HOME/.bend" -type f -name 'bend*' -type f | head -1)")
+          BIN_DIR=$(dirname "$(find "$HOME/.bend" -type f -name bend -size +10M | head -1)")
           echo "$BIN_DIR" >> "$GITHUB_PATH"
           echo "BENDBIN=$BIN_DIR/bend" >> "$GITHUB_ENV"
 
