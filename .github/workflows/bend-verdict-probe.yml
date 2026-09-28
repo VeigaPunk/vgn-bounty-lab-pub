@@ -25,40 +25,38 @@ jobs:
           find "$HOME/.bend" -type f -name 'bend*' -exec ls -la {} \; > extraction-tree.txt
           find "$HOME/.bend" -type f -name 'bend*' ! -size +10M -exec sh -c 'echo "--- $1 (head)"; head -c 2000 "$1"' _ {} \; > text-bend-files.txt || true
 
-      - name: toolchain diagnostics (non-fatal, evidence first)
+      - name: resolve binary per-step (no cross-step path threading)
+        id: bendbin
+        run: |
+          BENDBIN=$(find "$HOME/.bend" -type f -name bend -size +10M | head -1)
+          test -n "$BENDBIN"
+          echo "bin=$BENDBIN" >> "$GITHUB_OUTPUT"
+          "$BENDBIN" --version
+
+      - name: toolchain diagnostics (evidence)
         run: |
           {
             echo "=== extraction tree:"
             cat extraction-tree.txt
-            BENDBIN=$(find "$HOME/.bend" -type f -name 'bend*' | head -1)
-            echo "=== candidate binary: $BENDBIN"
-            file "$BENDBIN" || true
-            ldd "$BENDBIN" 2>&1 || true
-            chmod +x "$BENDBIN" 2>/dev/null || true
-            echo "=== try version flags:"
-            "$BENDBIN" --version 2>&1 | head -5 || true
-            "$BENDBIN" -V 2>&1 | head -5 || true
-            "$BENDBIN" version 2>&1 | head -5 || true
+            echo "=== real binary: ${{ steps.bendbin.outputs.bin }}"
+            file "${{ steps.bendbin.outputs.bin }}" || true
             echo "=== help head:"
-            "$BENDBIN" --help 2>&1 | head -40 || true
+            "${{ steps.bendbin.outputs.bin }}" --help 2>&1 | head -40 || true
             echo "=== text bend* files bundled in tarball (leads):"
             cat text-bend-files.txt 2>/dev/null || true
           } > toolchain.log 2>&1 || true
           cat toolchain.log
-          BIN_DIR=$(dirname "$(find "$HOME/.bend" -type f -name bend -size +10M | head -1)")
-          echo "$BIN_DIR" >> "$GITHUB_PATH"
-          echo "BENDBIN=$BIN_DIR/bend" >> "$GITHUB_ENV"
 
       - name: smoke — verdict over upstream examples (tag v2.0.32)
         run: |
           {
             git clone --depth 1 --branch v2.0.32 https://github.com/bendlang/bend.git /tmp/bend-src
-            find /tmp/bend-src -name '*.bend' -not -path '*/target/*' | head -10 > files.txt
+            find /tmp/bend-src -name '*.bend' -not -path '*/target/*' | head -10 > files.txt || true
             echo "=== files under verdict:"; cat files.txt
             PASS=0; FAIL=0
             while read -r f; do
               echo "=== $f"
-              timeout 60 "$BENDBIN" "$f" --verdict && PASS=$((PASS+1)) || { FAIL=$((FAIL+1)); echo "VERDICT-NONZERO: $f"; }
+              timeout 60 "${{ steps.bendbin.outputs.bin }}" "$f" --verdict && PASS=$((PASS+1)) || { FAIL=$((FAIL+1)); echo "VERDICT-NONZERO: $f"; }
             done < files.txt
             echo "SMOKE SUMMARY: pass=$PASS fail=$FAIL"
           } > smoke.log 2>&1 || true
@@ -70,7 +68,7 @@ jobs:
             shopt -s nullglob
             for f in attacks/*.bend; do
               echo "=== ATTACK: $f"
-              if timeout 120 "$BENDBIN" "$f" --verdict; then
+              if timeout 120 "${{ steps.bendbin.outputs.bin }}" "$f" --verdict; then
                 echo "ALL-CHECK-PASS: $f  <<< SURPRISE"
               else
                 echo "REJECTED: $f"
