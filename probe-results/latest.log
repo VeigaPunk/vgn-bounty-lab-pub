@@ -1,0 +1,208 @@
+# bend-verdict-probe 2026-09-28T18:58:21Z @ ed23517
+
+## toolchain
+=== extraction tree:
+total 12
+drwxr-xr-x  3 runner runner 4096 Sep 28 18:58 .
+drwxr-x--- 12 runner runner 4096 Sep 28 18:58 ..
+drwxr-xr-x  5 runner runner 4096 Sep 27 15:40 bend
+total 20
+drwxr-xr-x 5 runner runner 4096 Sep 27 15:40 .
+drwxr-xr-x 3 runner runner 4096 Sep 28 18:58 ..
+drwxr-xr-x 3 runner runner 4096 Sep 27 15:40 bend2
+drwxr-xr-x 2 runner runner 4096 Sep 28 18:58 bin
+drwxr-xr-x 2 runner runner 4096 Sep 28 18:58 guide
+total 260
+drwxr-xr-x 3 runner runner   4096 Sep 27 15:40 .
+drwxr-xr-x 5 runner runner   4096 Sep 27 15:40 ..
+-rw-r--r-- 1 runner runner  71783 Sep 27 15:40 base.bend
+-rw-r--r-- 1 runner runner 179752 Sep 27 15:40 bendtt.lean
+drwxr-xr-x 2 runner runner   4096 Sep 28 18:58 effs
+-rw-r--r-- 1 runner runner 179752 Sep 27 15:40 /home/runner/.bend/bend/bend2/bendtt.lean
+-rw-r--r-- 1 runner runner 71783 Sep 27 15:40 /home/runner/.bend/bend/bend2/base.bend
+total 316
+drwxr-xr-x 2 runner runner  4096 Sep 28 18:58 .
+drwxr-xr-x 3 runner runner  4096 Sep 27 15:40 ..
+-rw-r--r-- 1 runner runner   354 Sep 27 15:40 args.c
+-rw-r--r-- 1 runner runner   221 Sep 27 15:40 args.js
+-rw-r--r-- 1 runner runner  6704 Sep 27 15:40 audio.c
+-rw-r--r-- 1 runner runner   118 Sep 27 15:40 audio_close.js
+-rw-r--r-- 1 runner runner   266 Sep 27 15:40 audio_open.js
+-rw-r--r-- 1 runner runner   422 Sep 27 15:40 audio_write.js
+-rw-r--r-- 1 runner runner  4587 Sep 27 15:40 chan.c
+-rw-r--r-- 1 runner runner  1824 Sep 27 15:40 chan.js
+-rw-r--r-- 1 runner runner   245 Sep 27 15:40 file_close.c
+-rw-r--r-- 1 runner runner   192 Sep 27 15:40 file_close.js
+-rw-r--r-- 1 runner runner  1114 Sep 27 15:40 file_open.c
+-rw-r--r-- 1 runner runner   462 Sep 27 15:40 file_open.js
+-rw-r--r-- 1 runner runner  2002 Sep 27 15:40 file_read.c
+-rw-r--r-- 1 runner runner   783 Sep 27 15:40 file_read.js
+-rw-r--r-- 1 runner runner   772 Sep 27 15:40 file_size.c
+-rw-r--r-- 1 runner runner   355 Sep 27 15:40 file_size.js
+-rw-r--r-- 1 runner runner  1293 Sep 27 15:40 file_write.c
+-rw-r--r-- 1 runner runner   672 Sep 27 15:40 file_write.js
+-rw-r--r-- 1 runner runner   400 Sep 27 15:40 get_env.c
+-rw-r--r-- 1 runner runner   223 Sep 27 15:40 get_env.js
+-rw-r--r-- 1 runner runner   269 Sep 27 15:40 listener_close.c
+-rw-r--r-- 1 runner runner   183 Sep 27 15:40 listener_close.js
+-rw-r--r-- 1 runner runner   199 Sep 27 15:40 now.c
+-rw-r--r-- 1 runner runner   113 Sep 27 15:40 now.js
+-rw-r--r-- 1 runner runner   399 Sep 27 15:40 print.c
+-rw-r--r-- 1 runner runner   138 Sep 27 15:40 print.js
+-rw-r--r-- 1 runner runner   238 Sep 27 15:40 print_err.c
+-rw-r--r-- 1 runner runner   150 Sep 27 15:40 print_err.js
+-rw-r--r-- 1 runner runner  9014 Sep 27 15:40 process_run.c
+-rw-r--r-- 1 runner runner  1148 Sep 27 15:40 process_run.js
+-rw-r--r-- 1 runner runner   742 Sep 27 15:40 random_u32.c
+-rw-r--r-- 1 runner runner   151 Sep 27 15:40 random_u32.js
+-rw-r--r-- 1 runner runner   208 Sep 27 15:40 sleep.c
+-rw-r--r-- 1 runner runner   170 Sep 27 15:40 sleep.js
+-rw-r--r-- 1 runner runner   257 Sep 27 15:40 socket_close.c
+-rw-r--r-- 1 runner runner   169 Sep 27 15:40 socket_close.js
+-rw-r--r-- 1 runner runner   220 Sep 27 15:40 spawn.c
+-rw-r--r-- 1 runner runner   160 Sep 27 15:40 spawn.js
+-rw-r--r-- 1 runner runner   910 Sep 27 15:40 tcp_accept.c
+-rw-r--r-- 1 runner runner   939 Sep 27 15:40 tcp_accept.js
+-rw-r--r-- 1 runner runner  1295 Sep 27 15:40 tcp_connect.c
+-rw-r--r-- 1 runner runner  1122 Sep 27 15:40 tcp_connect.js
+-rw-r--r-- 1 runner runner   878 Sep 27 15:40 tcp_listen.c
+-rw-r--r-- 1 runner runner   671 Sep 27 15:40 tcp_listen.js
+-rw-r--r-- 1 runner runner  1296 Sep 27 15:40 tcp_poll.c
+-rw-r--r-- 1 runner runner   970 Sep 27 15:40 tcp_poll.js
+-rw-r--r-- 1 runner runner  1636 Sep 27 15:40 tcp_recv.c
+-rw-r--r-- 1 runner runner  1113 Sep 27 15:40 tcp_recv.js
+-rw-r--r-- 1 runner runner  1428 Sep 27 15:40 tcp_send.c
+-rw-r--r-- 1 runner runner  1145 Sep 27 15:40 tcp_send.js
+-rw-r--r-- 1 runner runner   346 Sep 27 15:40 thread_count.c
+-rw-r--r-- 1 runner runner   137 Sep 27 15:40 thread_count.js
+-rw-r--r-- 1 runner runner   747 Sep 27 15:40 udp_bind.c
+-rw-r--r-- 1 runner runner   502 Sep 27 15:40 udp_bind.js
+-rw-r--r-- 1 runner runner   916 Sep 27 15:40 udp_poll.c
+-rw-r--r-- 1 runner runner   764 Sep 27 15:40 udp_poll.js
+-rw-r--r-- 1 runner runner  1166 Sep 27 15:40 udp_recv_from.c
+-rw-r--r-- 1 runner runner  1062 Sep 27 15:40 udp_recv_from.js
+-rw-r--r-- 1 runner runner  1216 Sep 27 15:40 udp_send_to.c
+-rw-r--r-- 1 runner runner   840 Sep 27 15:40 udp_send_to.js
+-rw-r--r-- 1 runner runner 23756 Sep 27 15:40 window.c
+-rw-r--r-- 1 runner runner   124 Sep 27 15:40 window_close.js
+-rw-r--r-- 1 runner runner   207 Sep 27 15:40 window_frame.js
+-rw-r--r-- 1 runner runner   115 Sep 27 15:40 window_grab.js
+-rw-r--r-- 1 runner runner   365 Sep 27 15:40 window_open.js
+-rw-r--r-- 1 runner runner   133 Sep 27 15:40 window_set_title.js
+-rw-r--r-- 1 runner runner   372 Sep 27 15:40 write.c
+-rw-r--r-- 1 runner runner   131 Sep 27 15:40 write.js
+total 60
+drwxr-xr-x 2 runner runner  4096 Sep 28 18:58 .
+drwxr-xr-x 5 runner runner  4096 Sep 27 15:40 ..
+-rw-r--r-- 1 runner runner  5196 Sep 27 15:40 EFFECTS.md
+-rw-r--r-- 1 runner runner 28359 Sep 27 15:40 GUIDE.md
+-rw-r--r-- 1 runner runner 13402 Sep 27 15:40 SHADERS.md
+-rw-r--r-- 1 runner runner 5196 Sep 27 15:40 /home/runner/.bend/bend/guide/EFFECTS.md
+-rw-r--r-- 1 runner runner 13402 Sep 27 15:40 /home/runner/.bend/bend/guide/SHADERS.md
+-rw-r--r-- 1 runner runner 28359 Sep 27 15:40 /home/runner/.bend/bend/guide/GUIDE.md
+total 92696
+drwxr-xr-x 2 runner runner     4096 Sep 28 18:58 .
+drwxr-xr-x 5 runner runner     4096 Sep 27 15:40 ..
+-rwxr-xr-x 1 runner runner 94910592 Sep 27 15:40 bend
+-rwxr-xr-x 1 runner runner 94910592 Sep 27 15:40 /home/runner/.bend/bend/bin/bend
+=== candidate binary: /home/runner/.bend/bend/bend2/bendtt.lean
+/home/runner/.bend/bend/bend2/bendtt.lean: Unicode text, UTF-8 text
+	not a dynamic executable
+=== try version flags:
+/home/runner/.bend/bend/bend2/bendtt.lean: line 1: import: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 3: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 4: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 5: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 6: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 1: import: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 3: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 4: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 5: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 6: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 1: import: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 3: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 4: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 5: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 6: --: command not found
+=== help head:
+/home/runner/.bend/bend/bend2/bendtt.lean: line 1: import: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 3: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 4: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 5: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 6: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 13: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 14: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 15: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 16: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 17: --: command not found
+/home/runner/.bend/bend/bend2/bendtt.lean: line 18: syntax error near unexpected token `('
+/home/runner/.bend/bend/bend2/bendtt.lean: line 18: `-- may be inconsistent (Girard's paradox fits there). All else is live.'
+
+## smoke
+Cloning into '/tmp/bend-src'...
+Note: switching to '573002f01ec6c52416d44489543f69a9625facf8'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+find: ‘standard output’: Broken pipe
+find: write error
+=== files under verdict:
+/tmp/bend-src/bench/checker/compute_1600/main.bend
+/tmp/bend-src/bench/checker/generics_3200/main.bend
+/tmp/bend-src/bench/checker/trees_400/main.bend
+/tmp/bend-src/bench/checker/proofs_3200/main.bend
+/tmp/bend-src/bench/checker/defs_12800/main.bend
+/tmp/bend-src/bench/runtime/bfs/main.bend
+/tmp/bend-src/bench/runtime/symreg/main.bend
+/tmp/bend-src/bench/runtime/tree-radix/main.bend
+/tmp/bend-src/bench/runtime/kmeans/main.bend
+/tmp/bend-src/bench/runtime/raytrace/main.bend
+=== /tmp/bend-src/bench/checker/compute_1600/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/checker/compute_1600/main.bend
+=== /tmp/bend-src/bench/checker/generics_3200/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/checker/generics_3200/main.bend
+=== /tmp/bend-src/bench/checker/trees_400/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/checker/trees_400/main.bend
+=== /tmp/bend-src/bench/checker/proofs_3200/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/checker/proofs_3200/main.bend
+=== /tmp/bend-src/bench/checker/defs_12800/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/checker/defs_12800/main.bend
+=== /tmp/bend-src/bench/runtime/bfs/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/runtime/bfs/main.bend
+=== /tmp/bend-src/bench/runtime/symreg/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/runtime/symreg/main.bend
+=== /tmp/bend-src/bench/runtime/tree-radix/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/runtime/tree-radix/main.bend
+=== /tmp/bend-src/bench/runtime/kmeans/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/runtime/kmeans/main.bend
+=== /tmp/bend-src/bench/runtime/raytrace/main.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+VERDICT-NONZERO: /tmp/bend-src/bench/runtime/raytrace/main.bend
+SMOKE SUMMARY: pass=0 fail=10
+
+## attacks
+=== ATTACK: attacks/attack-01.bend
+timeout: failed to run command ‘/home/runner/.bend/bend/bend2/bend’: No such file or directory
+REJECTED: attacks/attack-01.bend
